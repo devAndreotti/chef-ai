@@ -43,12 +43,15 @@ export const ChefMessage = ({ content }: ChefMessageProps) => {
         );
       }
       
-      // Numbered lists
-      if (/^\d+\./.test(line)) {
+      // Numbered lists: número escrito à mão, porque os <li> soltos
+      // continuariam a contagem da lista de ingredientes (5, 6, 7...)
+      const numbered = line.match(/^(\d+)\.\s*(.*)$/);
+      if (numbered) {
         return (
-          <li key={index} className="ml-4 mb-1 text-foreground/90 list-decimal">
-            {line.replace(/^\d+\.\s*/, '')}
-          </li>
+          <p key={index} className="ml-4 mb-1 text-foreground/90">
+            <span className="font-semibold text-primary mr-2">{numbered[1]}.</span>
+            {numbered[2]}
+          </p>
         );
       }
       
