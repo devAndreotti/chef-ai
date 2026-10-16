@@ -147,8 +147,8 @@ export const WelcomeSection = ({ onExampleClick }: WelcomeSectionProps) => {
         </div>
         
         <div className="space-y-4">
-          <h2 className="text-3xl font-bold text-foreground chef-title">
-            Olá! Eu sou o Chef AI 👨‍🍳
+          <h2 className="text-3xl font-bold text-foreground">
+            <span className="chef-title">Olá! Eu sou o Chef AI</span> 👨‍🍳
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Transformo os ingredientes que você tem em casa em receitas incríveis! 
