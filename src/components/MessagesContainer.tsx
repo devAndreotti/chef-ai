@@ -20,6 +20,8 @@ export const MessagesContainer = ({ messages, isTyping, onExampleClick }: Messag
   };
 
   useEffect(() => {
+    // Na tela inicial não rola: senão o título e os cards somem em telas pequenas.
+    if (messages.length === 0 && !isTyping) return;
     scrollToBottom();
   }, [messages, isTyping]);
 

@@ -33,7 +33,7 @@ export const ChatInput = ({ onSendMessage, isTyping }: ChatInputProps) => {
   };
 
   return (
-    <div className="p-6 border-t border-border/50 backdrop-blur-sm">
+    <div className="p-4 sm:p-6 border-t border-border/50 backdrop-blur-sm">
       <Card className="neon-border bg-card/80 backdrop-blur-sm">
         <div className="flex gap-3 p-4">
           <Input
@@ -41,14 +41,14 @@ export const ChatInput = ({ onSendMessage, isTyping }: ChatInputProps) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Quais ingredientes você tem aí? Me diga e eu crio uma receita incrível para você!"
+            placeholder="Quais ingredientes você tem?"
             className="flex-1 bg-transparent border-0 focus-visible:ring-0 text-base placeholder:text-muted-foreground/70"
             disabled={isTyping}
           />
           <Button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || isTyping}
-            className="neon-gradient hover:opacity-90 transition-opacity glow-on-hover px-6"
+            className="neon-gradient hover:opacity-90 transition-opacity glow-on-hover px-4 sm:px-6"
           >
             <Send className="w-4 h-4" />
           </Button>
